@@ -1,16 +1,14 @@
 package com.logmyspace.api.commons.util;
 
-/**
- * Utility class for App specific helper methods.
- */
+/** Utility class for App specific helper methods. */
 public class AppUtil {
 
   /**
    * Validates that the given condition is {@code true}.
    *
-   * <p>This method is typically used for validating method arguments</p>
+   * <p>This method is typically used for validating method arguments
    *
-   * @param condition    the condition to validate
+   * @param condition the condition to validate
    * @param errorMessage the error message to include in the exception if validation fails
    * @throws IllegalArgumentException if {@code condition} is {@code false}
    */

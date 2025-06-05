@@ -17,16 +17,13 @@ import jakarta.validation.constraints.NotBlank;
 import java.util.Objects;
 import java.util.UUID;
 
-/**
- * Represents a user entity.
- */
+/** Represents a user entity. */
 @Entity
 @Table(name = "users")
 public class User extends BaseEntity {
 
   @Id
-  @NotBlank
-  @Column(unique = true, nullable = false)
+  @NotBlank @Column(unique = true, nullable = false)
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
 
@@ -34,8 +31,7 @@ public class User extends BaseEntity {
 
   private String email;
 
-  protected User() {
-  }
+  protected User() {}
 
   public User(UUID id, String username, String email) {
     requireAllNonNull(id, username, email);

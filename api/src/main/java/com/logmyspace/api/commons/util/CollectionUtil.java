@@ -7,9 +7,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Stream;
 
-/**
- * Utility class providing helper method for collections.
- */
+/** Utility class providing helper method for collections. */
 public class CollectionUtil {
   /**
    * Ensures that the provided collection and all of its elements are not {@code null}.
@@ -36,7 +34,7 @@ public class CollectionUtil {
   /**
    * Trims leading and trailing whitespace from each non-null string in the provided list.
    *
-   * <p>The list is modified in-place.</p>
+   * <p>The list is modified in-place.
    *
    * @param list the list of strings to trim
    * @return the same list instance, with trimmed strings
@@ -58,7 +56,7 @@ public class CollectionUtil {
    * Validates that the provided collection is not {@code null} or empty.
    *
    * @param collection the collection to validate
-   * @throws NullPointerException     if the collection is {@code null}
+   * @throws NullPointerException if the collection is {@code null}
    * @throws IllegalArgumentException if the collection is empty
    */
   public static void validateCollectionNotEmpty(Collection<?> collection) {
