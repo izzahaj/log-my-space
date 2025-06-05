@@ -11,27 +11,22 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 /**
- * An abstract base entity class serving as a common superclass for all entities in the
- * application.
+ * An abstract base entity class serving as a common superclass for all entities in the application.
  *
  * <p>This class provides common fields and methods related to entity auditing such as creation
- * timestamp, last modified timestamp, and lifecycle callbacks for setting the timestamps.</p>
+ * timestamp, last modified timestamp, and lifecycle callbacks for setting the timestamps.
  *
- * <p>Subclasses of this class can extend it to inherit the auditing fields and behavior.</p>
+ * <p>Subclasses of this class can extend it to inherit the auditing fields and behavior.
  */
 @MappedSuperclass
 public abstract class BaseEntity {
 
-  /**
-   * The creation timestamp of the entity.
-   */
+  /** The creation timestamp of the entity. */
   @CreationTimestamp
   @Column(name = "created_at", nullable = false, updatable = false)
   private OffsetDateTime createdAt;
 
-  /**
-   * The last modified timestamp of the entity.
-   */
+  /** The last modified timestamp of the entity. */
   @UpdateTimestamp
   @Column(name = "last_modified_at", nullable = false)
   private OffsetDateTime lastModifiedAt;
@@ -84,8 +79,7 @@ public abstract class BaseEntity {
       return false;
     }
 
-    return o.getCreatedAt().equals(createdAt)
-        && o.getLastModifiedAt().equals(lastModifiedAt);
+    return o.getCreatedAt().equals(createdAt) && o.getLastModifiedAt().equals(lastModifiedAt);
   }
 
   @Override

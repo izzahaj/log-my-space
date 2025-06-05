@@ -1,1 +1,12 @@
-npx lint-staged
+# npx lint-staged
+
+echo "Running backend lint checks...\r"
+npm run lint:api > /dev/null 2>&1
+BACKEND_LINT_EXIT_CODE=$?
+
+if [ $BACKEND_LINT_EXIT_CODE -eq 0 ]; then
+  echo "✔ Running backend lint checks..."
+else
+  echo "✖ Backend lint checks failed."
+  exit 1
+fi
