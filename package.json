@@ -6,7 +6,7 @@
     "lint-staged": "^16.1.0"
   },
   "scripts": {
-    "prepare": "husky",
-    "lint:api": "cd api && ./gradlew spotlessApply && ./gradlew checkstyleMain checkstyleTest"
+    "format:api": "cd api && ./gradlew spotlessApply",
+    "lint:api": "cd api && ./gradlew checkstyleMain checkstyleTest"
   }
 }
