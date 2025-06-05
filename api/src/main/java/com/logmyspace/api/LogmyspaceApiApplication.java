@@ -7,6 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class LogmyspaceApiApplication {
 
+  /**
+   * The application's main method. Used to launch the Log My Space API.
+   *
+   * @param args command-line arguments passed to the application
+   */
   public static void main(String[] args) {
     SpringApplication.run(LogmyspaceApiApplication.class, args);
   }
