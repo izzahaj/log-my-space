@@ -1,6 +1,6 @@
 # npx lint-staged
 
-echo -ne "⏳ Running backend lint checks..."
+echo -ne "⏳ Running backend lint checks...\r"
 npm run lint:api > /dev/null 2>&1
 BACKEND_LINT_EXIT_CODE=$?
 
