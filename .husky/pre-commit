@@ -1,3 +1,7 @@
+RED="\033[31m"
+GREEN="\033[32m"
+RESET="\033[0m"
+
 # npx lint-staged
 
 printf "⏳ Running backend lint checks..."
@@ -7,8 +11,8 @@ BACKEND_LINT_EXIT_CODE=$?
 
 # Overwrite the previous line with the result
 if [ $BACKEND_LINT_EXIT_CODE -eq 0 ]; then
-  printf "\r✔ Running backend lint checks...\n"
+  printf "\r${GREEN}✔${RESET} Running backend lint checks...\n"
 else
-  printf "\r✖ Backend lint checks failed.\n"
+  printf "\r${RED}✖${RESET} Backend lint checks failed.\n"
   exit 1
 fi
