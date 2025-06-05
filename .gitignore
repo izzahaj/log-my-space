@@ -62,3 +62,13 @@
 **/.vscode/
 
 **/.DS_Store
+
+**/htmlcov/
+**/.coverage
+**/.coverage.*
+**/.cache
+**/coverage.xml
+**/*.env
+**/node_modules
+**/.pnp
+**/.pnp.js
