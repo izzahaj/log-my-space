@@ -15,7 +15,7 @@ git add -u
 # Run the checks
 output=$(npm run lint:api 2>&1)
 # BACKEND_LINT_EXIT_CODE=$?
-printf $output
+printf "${output}"
 # Overwrite the previous line with the result
 # if [ $BACKEND_LINT_EXIT_CODE -eq 0 ]; then
 #   printf "\r${GREEN}✔${RESET} Running backend lint checks...\n"
