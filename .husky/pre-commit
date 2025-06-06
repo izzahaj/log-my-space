@@ -7,13 +7,12 @@ RESET="\033[0m"
 printf "⏳ Running backend lint checks..."
 
 npm run format:api > /dev/null 2>&1
-BACKEND_FORMAT_EXIT_CODE=$?
 
 # Re-add any reformatted files
 git add -u
 
 # Run the checks
-npm run lint:api > /dev/null 2>&1
+npm run lint:api
 BACKEND_LINT_EXIT_CODE=$?
 
 # Overwrite the previous line with the result
