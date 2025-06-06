@@ -7,6 +7,6 @@
   },
   "scripts": {
     "format:api": "cd api && ./gradlew spotlessApply",
-    "lint:api": "cd api && ./gradlew checkstyleMain checkstyleTest"
+    "lint:api": "cd api && ./gradlew clean checkstyleMain checkstyleTest"
   }
 }

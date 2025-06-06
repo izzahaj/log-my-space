@@ -22,6 +22,7 @@ public class InventoryService {
   public Inventory createInventory(String name, User user) {
     requireAllNonNull(name, user);
     // maybe retrieve user here instead of controller
+
     Inventory inventory = new Inventory(name, user);
     return inventoryRepository.save(inventory);
   }
