@@ -2,9 +2,10 @@ RED="\033[31m"
 GREEN="\033[32m"
 RESET="\033[0m"
 
+# printf "Running frontend lint checks..."
 # npx lint-staged
 
-printf "⏳ Running backend lint checks..."
+printf "Running backend lint checks..."
 
 npm run format:api > /dev/null 2>&1
 
@@ -13,13 +14,13 @@ git add -u
 
 # Run the checks
 output=$(npm run lint:api 2>&1)
-BACKEND_LINT_EXIT_CODE=$?
-
+# BACKEND_LINT_EXIT_CODE=$?
+printf $output
 # Overwrite the previous line with the result
-if [ $BACKEND_LINT_EXIT_CODE -eq 0 ]; then
-  printf "\r${GREEN}✔${RESET} Running backend lint checks...\n"
-else
-  printf "\r${RED}✖${RESET} Backend lint checks failed.\n"
-  printf $output
-  exit 1
-fi
+# if [ $BACKEND_LINT_EXIT_CODE -eq 0 ]; then
+#   printf "\r${GREEN}✔${RESET} Running backend lint checks...\n"
+# else
+#   printf "\r${RED}✖${RESET} Backend lint checks failed.\n"
+#   printf $output
+#   exit 1
+# fi

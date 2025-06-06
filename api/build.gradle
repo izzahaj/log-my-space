@@ -27,7 +27,6 @@ spotless {
     java {
         googleJavaFormat()
         removeUnusedImports()
-        formatAnnotations()
     }
 }
 

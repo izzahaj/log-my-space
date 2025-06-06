@@ -23,6 +23,7 @@ import jakarta.validation.constraints.Size;
 import java.util.Objects;
 import java.util.UUID;
 
+/** Represents an inventory entity. */
 @Entity
 @Table(
     name = "inventories",
@@ -36,15 +37,24 @@ public class Inventory extends BaseEntity {
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
 
-  @NotBlank(message = BLANK_NAME_MESSAGE) @Size(min = MIN_NAME_LENGTH, max = MAX_NAME_LENGTH, message = NAME_LENGTH_MESSAGE) @Column(nullable = false)
+  @NotBlank(message = BLANK_NAME_MESSAGE)
+  @Size(min = MIN_NAME_LENGTH, max = MAX_NAME_LENGTH, message = NAME_LENGTH_MESSAGE)
+  @Column(nullable = false)
   private String name;
 
   @ManyToOne(optional = false)
   @JoinColumn(name = "user_id", nullable = false)
   private User user;
 
+  /** Default constructor for JPA. */
   protected Inventory() {}
 
+  /**
+   * Creates a new {@code Inventory} with the specified name and owner.
+   *
+   * @param name the name of the inventory
+   * @param user the user who owns the inventory
+   */
   public Inventory(String name, User user) {
     requireAllNonNull(name, user);
     this.name = name;
@@ -61,10 +71,6 @@ public class Inventory extends BaseEntity {
 
   public User getUser() {
     return this.user;
-  }
-
-  public void setId(UUID id) {
-    this.id = id;
   }
 
   public void setName(String name) {

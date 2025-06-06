@@ -1,5 +1,6 @@
 package com.logmyspace.api.inventory;
 
+/** Contains constants related to the {@link Inventory} domain. */
 public class InventoryConstants {
   public static final int MIN_NAME_LENGTH = 1;
   public static final int MAX_NAME_LENGTH = 30;

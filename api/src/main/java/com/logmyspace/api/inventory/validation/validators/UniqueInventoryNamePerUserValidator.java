@@ -11,6 +11,7 @@ import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/** Validator that ensures an {@link Inventory} name is unique for a given user. */
 @Component
 public class UniqueInventoryNamePerUserValidator
     implements ConstraintValidator<UniqueInventoryNamePerUser, Inventory> {
@@ -22,7 +23,7 @@ public class UniqueInventoryNamePerUserValidator
     requireAllNonNull(inventory.getUser(), inventory.getName());
 
     boolean exists =
-        inventoryRepository.existsByUserAndNameIgnoreCase(inventory.getUser(), inventory.getName());
+        inventoryRepository.existsByUserAndName(inventory.getUser(), inventory.getName());
 
     if (exists) {
       context.disableDefaultConstraintViolation();
